@@ -1,0 +1,18 @@
+
+version: '3'
+services:
+  web:
+    image: django:latest
+  frontend:
+    image: node:latest
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: podjaj
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    
